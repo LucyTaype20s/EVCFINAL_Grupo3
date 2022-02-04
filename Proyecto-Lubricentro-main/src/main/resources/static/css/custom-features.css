@@ -1,0 +1,30 @@
+
+body {
+	
+  background: url(/imgs/fondito.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#loguito{
+	
+	width: 80px;
+    height: 80px;
+    border: 3px solid #73AD21;
+    margin-left: 90px;
+    margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+#contenido {
+  
+  background: url(/imgs/fondito.jpg);	
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#ColorTitle {
+	
+	color: black;
+}
+

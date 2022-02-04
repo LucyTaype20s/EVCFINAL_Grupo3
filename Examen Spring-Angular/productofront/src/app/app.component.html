@@ -1,0 +1,177 @@
+<div class="formularioRegistro">
+    <h2>Crear Producto</h2>
+    <form [formGroup]="productoForm" (ngSubmit)="guardar()" >
+      <div class="form-group">
+        <label>nombre</label>
+        <input type="text" formControlName="nombre" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>descripcion</label>
+        <input type="text" formControlName="descripcion" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>imagen</label>
+        <input type="text" formControlName="imagen" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>precio</label>
+        <input type="number" formControlName="precio" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>cantidad</label>
+        <input type="number" formControlName="cantidad" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Marca</label>
+        <select name="categoria" id="categoria" formControlName="categoria" class="form-control">
+          <option [ngValue]="item" *ngFor="let item of categorias">{{item.nombre}}</option>
+        </select>
+      </div>
+    
+     
+  
+      <br>
+      <br>
+      <br>
+      <button type="submit" class="btn btn-primary" [disabled]="productoForm.invalid">Guardar</button>
+  
+  
+
+  
+    </form>
+  </div>
+
+  <hr>
+  <div class="formularioRegistro">
+  <h2 class="text-center">Productos registrados</h2>
+  <br>
+  <table class="table table-dark table-hover">
+      <thead>
+        <tr>
+          
+          <th scope="col" >Nombre</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Imagen</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Marca</th>
+          <th scope="col">Opcion </th>
+          <th scope="col">Opcion </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of productos">
+          
+          <td>{{item.nombre}}</td>
+          <td>{{item.descripcion}}</td>
+          <td>{{item.imagen}}</td>
+          <td>{{item.precio}}</td>
+          <td>{{item.cantidad}}</td>
+          <td>{{item.categoria.nombre}}</td>
+          
+
+          <td>
+            <div class="form-group row">
+               <button type="button" class="btn btn-success" (click)="editar(item)">Editar</button>
+
+            </div>
+
+          </td>
+          <td>
+            <button type="button" class="btn btn-danger" (click)="eliminar(item)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+<hr>
+<div class="formularioRegistro">
+<h2 class="text-center">Categorias registradas</h2>
+<br>
+<table class="table table-dark table-hover">
+    <thead>
+      <tr>
+       
+        <th scope="col" >Nombre</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Opcion </th>
+        <th scope="col">Opcion </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of categorias">
+        
+        <td>{{item.nombre}}</td>
+        <td>{{item.descripcion}}</td>
+    
+        
+
+        <td>
+          <div class="form-group row">
+             <button type="button" class="btn btn-success" (click)="editar(item)">Editar</button>
+
+          </div>
+
+        </td>
+        <td>
+          <button type="button" class="btn btn-danger" (click)="eliminar(item)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<hr>
+
+
+<div class="formularioRegistro">
+<h2 class="text-center">Marcas registradas</h2>
+<br>
+<table class="table table-dark table-hover">
+    <thead>
+      <tr>
+       
+        <th scope="col" >Nombre</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">Opcion </th>
+        <th scope="col">Opcion </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of marcas">
+        
+        <td>{{item.nombre}}</td>
+        <td>{{item.proveedor}}</td>
+
+        <td>{{item.categoria.nombre}}</td>
+
+        <td>
+          <div class="form-group row">
+             <button type="button" class="btn btn-success" (click)="editar(item)">Editar</button>
+
+          </div>
+
+        </td>
+        <td>
+          <button type="button" class="btn btn-danger" (click)="eliminar(item)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+  <br>
+  <br>  <br>  <br>  <br>  <br>
+  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>
+  
+  
+  
+  
+  
+  
+      <router-outlet></router-outlet>
+  
